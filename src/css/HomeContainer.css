@@ -1,0 +1,179 @@
+.Home-Container {
+  background-image: url("https://i.pinimg.com/originals/4e/80/76/4e8076838b1e96e81f9312bee41b188f.jpg");
+  background-repeat: repeat;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-areas:
+    "header     header    header  header header   header       header"
+    ". leftLine        leftLine  headline rightLine   rightLine       ."
+    ". colOne   .       colTwo .        colThr  ."
+    ". .        .       placeHolder .        .       ."
+    ". footer        footer  footer footer   footer       .";
+}
+
+@media (max-width: 635px) {
+  .Home-Container {
+    grid-template-areas:
+      "header header        header  header header   header       header"
+      ". .        headline       headline headline        .       ."
+      ". .        .       colOne .        .       ."
+      ". .        .       colTwo .        .       ."
+      ". .        .       colThr .        .       ."
+      ". .        .       placeHolder .        .       ."
+      ". footer        footer  footer footer   footer       .";
+  }
+}
+
+.Left-Line {
+  grid-area: leftLine;
+}
+
+/* .Home-Header {
+  grid-area: header;
+  height: 40px;
+  background-image: radial-gradient(
+    circle at 0% 0%,
+    #0e0f14,
+    #252736 51%,
+    #0e0f14
+  );;
+  margin-bottom: 20px;
+} */
+
+.Home-Headline {
+  grid-area: headline;
+  color: #d4d4d4;
+  font-size: 2rem;
+  font-weight: 250;
+  margin-bottom: 50px;
+}
+
+.Placeholder {
+  grid-area: placeHolder;
+  height: 200px;
+}
+
+.Home-Footer {
+  grid-area: footer;
+  height: 1px;
+  background-image: radial-gradient(
+    circle at 0% 0%,
+    #474b63,
+    #363847 51%,
+    #2f3038
+  );
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
+
+/* ---------------------------------- LOCATION FIELDS --------------------------------------- */
+
+.Field-Content {
+  height: 498px;
+  width: 378px;
+  background: rgb(231, 231, 231);
+  /* background: rgb(211, 211, 211); */
+  border-radius: 10px;
+
+  display: grid;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  grid-template-areas:
+    ".  F-header      F-header         F-header         F-header       F-header     ."
+    ".  F-head-ln     F-head-ln        F-head-ln        F-head-ln      F-head-ln    ."
+    ".  image         image            image            image          image        ."
+    ".  WIB1          WIB2             WIB3             WIB4           WIB5         ."
+    ".  filler        filler           filler           filler         filler       .";
+  grid-template-rows: 55px 1px 170px;
+}
+
+.Wrapper-Div-Meerbusch {
+  grid-area: colOne;
+  height: 500px;
+  width: 380px;
+  align-self: center;
+  justify-self: center;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 8px #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Wrapper-Div-Ibiza {
+  grid-area: colTwo;
+  height: 500px;
+  width: 380px;
+  align-self: center;
+  justify-self: center;
+  border-radius: 10px;
+  background-color: rgb(112, 112, 112);
+  box-shadow: 0 0 8px #92878c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Wrapper-Div-Aurach {
+  grid-area: colThr;
+  height: 500px;
+  width: 380px;
+  align-self: center;
+  justify-self: center;
+  border-radius: 10px;
+  background-color: rgb(83, 0, 0);
+  box-shadow: 0 0 8px #92878c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Field-Header {
+  grid-area: F-header;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.Field-Header-Line {
+  grid-area: F-head-ln;
+  height: 1px;
+  width: 80%;
+  background-color: lightslategray;
+  justify-self: center;
+}
+
+.Field-image {
+  grid-area: image;
+  align-self: center;
+  justify-self: center;
+  width: 300px;
+  height: 150px;
+  /* margin-top: 5px; */
+  border-radius: 10px;
+  box-shadow: 0 0 8px #92878c;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.W-I-B-1 {
+  grid-area: WIB1;
+}
+.W-I-B-2 {
+  grid-area: WIB2;
+}
+.W-I-B-3 {
+  grid-area: WIB3;
+}
+.W-I-B-4 {
+  grid-area: WIB4;
+}
+.W-I-B-5 {
+  grid-area: WIB5;
+}

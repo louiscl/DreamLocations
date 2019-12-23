@@ -1,0 +1,36 @@
+.WIB-Content{
+    background-color: rgb(203, 207, 212);
+    /* border-width: 3px;
+    border-color: darkgrey; */
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas: 
+    "WIB-Day"
+    "WIB-Date"
+    "WIB-Icon"
+    "WIB-Weather"
+    "WIB-Temperatur"
+    ;
+    grid-template-rows: 30px 20px 50px 30px ;
+}
+
+.WIB-Content:hover{
+    
+}
+
+.WIB-Day{
+    grid-area: WIB-Day;
+}
+.WIB-Date{
+    grid-area: WIB-Date;
+    font-size: 0.8rem;
+}
+.WIB-Icon{
+    grid-area: WIB-Icon;
+}
+.WIB-Weather{
+    grid-area: WIB-Weather;
+}
+.WIB-Temperatur{
+    grid-area: WIB-Temperatur;
+}
