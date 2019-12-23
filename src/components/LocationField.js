@@ -58,6 +58,10 @@ class LocationField extends React.Component {
     }
   };
 
+  linkToFlights = () => {
+    window.open("https://www.skyscanner.net/");
+  };
+
   render() {
     return (
       <div className={`Wrapper-Div-${this.props.city}`}>
@@ -72,7 +76,9 @@ class LocationField extends React.Component {
             ></img>
           </div>
           {this.renderWeather()}
-        <div className="Flight-Button-Wrapper"><button className="Flight-Button">Flüge finden</button></div>
+          <div className="Flight-Button-Wrapper">
+            <button className="Flight-Button" onClick={() => this.linkToFlights()}>Flüge finden</button>
+          </div>
         </div>
       </div>
     );

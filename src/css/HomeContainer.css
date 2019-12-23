@@ -180,6 +180,9 @@ img {
   grid-area: WIB5;
 }
 
+/* ---------------------------------- FLIGHT BUTTON --------------------------------------- */
+
+
 .Flight-Button-Wrapper{
     grid-area: filler;
 }
@@ -187,6 +190,8 @@ img {
     width: 200px;
     height: 30px;
     border-radius: 10px;
+    outline: none;
+    /* border: none; */
 }
 
 .Flight-Button:hover{
