@@ -96,6 +96,7 @@
   justify-self: center;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
+  background-color: rgb(53, 53, 53);
   box-shadow: 0 0 8px #ffffff;
 
   display: flex;
@@ -110,8 +111,8 @@
   align-self: center;
   justify-self: center;
   border-radius: 10px;
-  background-color: rgb(112, 112, 112);
-  box-shadow: 0 0 8px #92878c;
+  background-color: rgb(53, 53, 53);
+  box-shadow: 0 0 8px #ffffff;
 
   display: flex;
   justify-content: center;
@@ -125,8 +126,9 @@
   align-self: center;
   justify-self: center;
   border-radius: 10px;
-  background-color: rgb(83, 0, 0);
-  box-shadow: 0 0 8px #92878c;
+  background-color: rgb(53, 53, 53);
+  box-shadow: 0 0 8px #ffffff;
+
 
   display: flex;
   justify-content: center;
@@ -176,4 +178,18 @@ img {
 }
 .W-I-B-5 {
   grid-area: WIB5;
+}
+
+.Flight-Button-Wrapper{
+    grid-area: filler;
+}
+.Flight-Button{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.Flight-Button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 8px #92878c;
 }

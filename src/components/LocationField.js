@@ -72,6 +72,7 @@ class LocationField extends React.Component {
             ></img>
           </div>
           {this.renderWeather()}
+        <div className="Flight-Button-Wrapper"><button className="Flight-Button">Flüge finden</button></div>
         </div>
       </div>
     );
