@@ -1,36 +1,95 @@
-.WIB-Content{
-    background-color: rgb(214, 214, 214);
-    /* border-width: 3px;
-    border-color: darkgrey; */
-    border-radius: 10px;
-    display: grid;
-    grid-template-areas: 
+.WIB-Content {
+  /* background-color: rgb(0, 0, 0); */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.WIB-Content-City-meerbusch {
+  width: 97%;
+  height: 97%;
+  /* background-color: rgb(216, 216, 216); */
+  background-color: rgb(197, 197, 197);
+
+  box-shadow: 0 0 1px #92878c;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-areas:
     "WIB-Day"
     "WIB-Date"
     "WIB-Icon"
     "WIB-Weather"
-    "WIB-Temperatur"
-    ;
-    grid-template-rows: 30px 20px 50px 30px ;
+    "WIB-Temperatur";
+  grid-template-rows: 30px 20px 50px 30px;
+}
+.WIB-Content-City-meerbusch:hover {
+  cursor: pointer;
+  background-color: rgb(172, 170, 247);
+}
+.WIB-Content-City-meerbusch:active {
+  background-color: rgb(157, 156, 250);
 }
 
-.WIB-Content:hover{
-    
+.WIB-Content-City-ibiza {
+  width: 97%;
+  height: 97%;
+  background-color: rgb(197, 197, 197);
+  /* background-color: rgb(216, 216, 216); */
+  box-shadow: 0 0 1px #92878c;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-areas:
+    "WIB-Day"
+    "WIB-Date"
+    "WIB-Icon"
+    "WIB-Weather"
+    "WIB-Temperatur";
+  grid-template-rows: 30px 20px 50px 30px;
+}
+.WIB-Content-City-ibiza:hover {
+  cursor: pointer;
+  background-color: rgb(253, 230, 182);
 }
 
-.WIB-Day{
-    grid-area: WIB-Day;
+.WIB-Content-City-aurach {
+  width: 97%;
+  height: 97%;
+  background-color: rgb(197, 197, 197);
+  box-shadow: 0 0 1px #92878c;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-areas:
+    "WIB-Day"
+    "WIB-Date"
+    "WIB-Icon"
+    "WIB-Weather"
+    "WIB-Temperatur";
+  grid-template-rows: 30px 20px 50px 30px;
 }
-.WIB-Date{
-    grid-area: WIB-Date;
-    font-size: 0.8rem;
+
+.WIB-Content-City-aurach:hover {
+  cursor: pointer;
+  background-color: rgb(182, 243, 253);
 }
-.WIB-Icon{
-    grid-area: WIB-Icon;
+
+.WIB-Day {
+  grid-area: WIB-Day;
 }
-.WIB-Weather{
-    grid-area: WIB-Weather;
+.WIB-Date {
+  grid-area: WIB-Date;
+  font-size: 0.8rem;
 }
-.WIB-Temperatur{
-    grid-area: WIB-Temperatur;
+.WIB-Icon {
+  grid-area: WIB-Icon;
 }
+.WIB-Weather {
+  grid-area: WIB-Weather;
+}
+.WIB-Temperatur {
+  grid-area: WIB-Temperatur;
+}
+

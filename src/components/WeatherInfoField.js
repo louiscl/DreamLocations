@@ -27,7 +27,7 @@ class WeatherInfoField extends React.Component {
       return "Fr";
     } else if (day === 6) {
       return "Sa";
-    } else if (day === 7) {
+    } else if (day === 0) {
       return "So";
     }
   };
@@ -44,23 +44,38 @@ class WeatherInfoField extends React.Component {
 
   weatherIcon = () => {
     if (this.apiContentLoaded()) {
-        return `http://openweathermap.org/img/wn/${this.props.weatherInfoObj.weather[0].icon}@2x.png`
+      return `http://openweathermap.org/img/wn/${this.props.weatherInfoObj.weather[0].icon}@2x.png`;
     } else {
       return "placeholder icon";
+    }
+  };
+
+  convertKelvinToCelsius = kelvin => {
+    const celsius = kelvin - 273.1;
+    return celsius;
+  };
+
+  renderTemperature = () => {
+    if(this.apiContentLoaded()){
+    return `${Math.round(this.convertKelvinToCelsius(this.props.weatherInfoObj.main.temp))}°`
     }
   };
 
   render() {
     return (
       <div className={`W-I-B-${this.props.idx}`}>
-        <div className="WIB-Content">
-          <p className="WIB-Day">{this.renderDay()}</p>
-          <p className="WIB-Date">{this.convertAndRenderTextDate()}</p>
-          <p className="WIB-Icon" ><img src={`${this.weatherIcon()}`} width="40px"></img></p>
-          <p className="WIB-Weather">
-            {this.props.weatherInfoObj.weather[0].main}
-          </p>
-          <p className="WIB-Temperatur"></p>
+        <div className="WIB-Content" onClick={() => this.props.click(this.props.weatherInfoObj)}>
+          <div className={`WIB-Content-City-${this.props.city()}`}>
+            <p className="WIB-Day">{this.renderDay()}</p>
+            <p className="WIB-Date">{this.convertAndRenderTextDate()}</p>
+            <p className="WIB-Icon">
+              <img src={`${this.weatherIcon()}`} width="40px"></img>
+            </p>
+            <p className="WIB-Weather">
+              {this.props.weatherInfoObj.weather[0].main}
+            </p>
+            <p className="WIB-Temperatur">{this.renderTemperature()}</p>
+          </div>
         </div>
       </div>
     );

@@ -8,6 +8,7 @@
     "header     header    header  header header   header       header"
     ". leftLine        leftLine  headline rightLine   rightLine       ."
     ". colOne   .       colTwo .        colThr  ."
+    ". wInfo        wInfo       wInfo wInfo        wInfo       ."
     ". .        .       placeHolder .        .       ."
     ". footer        footer  footer footer   footer       .";
 }
@@ -20,6 +21,7 @@
       ". .        .       colOne .        .       ."
       ". .        .       colTwo .        .       ."
       ". .        .       colThr .        .       ."
+      ". .        .       wInfo .        .       ."
       ". .        .       placeHolder .        .       ."
       ". footer        footer  footer footer   footer       .";
   }
@@ -73,7 +75,12 @@
   height: 498px;
   width: 378px;
   background: rgb(231, 231, 231);
-  /* background: rgb(211, 211, 211); */
+  background-image: radial-gradient(
+    circle at 0% 0%,
+    rgb(223, 223, 223),
+    rgb(197, 197, 197) 51%,
+    rgb(184, 184, 184)
+  );
   border-radius: 10px;
 
   display: grid;
@@ -97,7 +104,7 @@
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
   background-color: rgb(53, 53, 53);
-  box-shadow: 0 0 8px #ffffff;
+  box-shadow: 0 0 5px #ffffff;
 
   display: flex;
   justify-content: center;
@@ -112,7 +119,7 @@
   justify-self: center;
   border-radius: 10px;
   background-color: rgb(53, 53, 53);
-  box-shadow: 0 0 8px #ffffff;
+  box-shadow: 0 0 5px #ffffff;
 
   display: flex;
   justify-content: center;
@@ -127,8 +134,7 @@
   justify-self: center;
   border-radius: 10px;
   background-color: rgb(53, 53, 53);
-  box-shadow: 0 0 8px #ffffff;
-
+  box-shadow: 0 0 5px #ffffff;
 
   display: flex;
   justify-content: center;
@@ -182,19 +188,140 @@ img {
 
 /* ---------------------------------- FLIGHT BUTTON --------------------------------------- */
 
-
-.Flight-Button-Wrapper{
-    grid-area: filler;
+.Flight-Button-Wrapper {
+  grid-area: filler;
 }
-.Flight-Button{
-    width: 200px;
-    height: 30px;
-    border-radius: 10px;
-    outline: none;
-    /* border: none; */
+.Flight-Button {
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  outline: none;
+  /* border: none; */
 }
 
-.Flight-Button:hover{
-    cursor: pointer;
-    box-shadow: 0 0 8px #92878c;
+.Flight-Button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 8px #92878c;
+}
+
+/* ---------------------------------- DETAILED INFO FIELD--------------------------------------- */
+
+.Detailed-Field-Wrapper {
+  grid-area: wInfo;
+  justify-self: center;
+  height: 280px;
+  width: 600px;
+  border-radius: 10px;
+  /* background: linear-gradient(21deg, rgb(192, 252, 252), rgb(192, 252, 252));
+  box-shadow: 0 0 13px rgb(192, 252, 252); */
+
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: emerge-desktop 2s;
+}
+
+@keyframes emerge-desktop {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 600px;
+  }
+}
+
+.Detailed-Field-Content {
+  height: 278px;
+  width: 598px;
+  border-radius: 10px;
+  background-image: radial-gradient(
+    circle at 0% 0%,
+    #373b52,
+    #252736 51%,
+    #1d1e26
+  );
+  color: white;
+  display: grid;
+  grid-template-areas: 
+  "DFCHeader DFCHeader DFCDate"
+  "DFCH1 DFCH2 DFCH3"
+  "DFCC1 DFCC2 DFCC3"
+  ;
+  animation: emerge-desktop 2s;
+
+}
+
+@keyframes appear {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.DFC-Header{
+  grid-area: DFCHeader;
+  justify-self: left;
+  margin-left: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  animation: appear 3s;
+}
+
+.DFCC-text{
+  font-size: 1rem;
+  font-weight: 250;
+  justify-self: left;
+  animation: appear 5s;
+}
+
+.DFCH1{
+  grid-area: DFCH1;
+  justify-self: left;
+  margin-left: 5px;
+  animation: appear 4s;
+
+}
+
+.DFCC1{
+  grid-area: DFCC1;
+  justify-self: left;
+  margin-left: 15px;
+}
+
+.DFCH2{
+  grid-area: DFCH2;
+  justify-self: left;
+  margin-left: 5px;
+  animation: appear 4s;
+
+}
+
+.DFCC2{
+  grid-area: DFCC2;
+  justify-self: left;
+  margin-left: 15px;
+}
+
+.DFCH3{
+  grid-area: DFCH3;
+  justify-self: left;
+  margin-left: 5px;
+  animation: appear 4s;
+
+}
+
+.DFCC3{
+  grid-area: DFCC3;
+  justify-self: left;
+  margin-left: 15px;
 }

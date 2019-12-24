@@ -3,13 +3,7 @@ import "../css/HomeContainer.css";
 import WeatherInfoField from "./WeatherInfoField";
 
 class LocationField extends React.Component {
-  //   determineCity = () => {
-  //     if (this.state.city === null && this.props.weatherInfo) {
-  //       if (this.props.weatherInfo.weather.city.name === "Meerbusch") {
-  //         this.setState({ city: "meerbusch" });
-  //       }
-  //     }
-  //   };
+
 
   determineCity = () => {
     if (this.props.city === "Meerbusch") {
@@ -50,7 +44,13 @@ class LocationField extends React.Component {
       return minimizedWeatherData.map((obj, idx) => {
         // console.log(obj);
         return (
-          <WeatherInfoField key={idx + 1} idx={idx + 1} weatherInfoObj={obj} />
+          <WeatherInfoField
+            key={idx + 1}
+            idx={idx + 1}
+            weatherInfoObj={obj}
+            city={this.determineCity}
+            click={this.props.click}
+          />
         );
       });
     } else {
@@ -77,7 +77,12 @@ class LocationField extends React.Component {
           </div>
           {this.renderWeather()}
           <div className="Flight-Button-Wrapper">
-            <button className="Flight-Button" onClick={() => this.linkToFlights()}>Flüge finden</button>
+            <button
+              className="Flight-Button"
+              onClick={() => this.linkToFlights()}
+            >
+              Flüge finden
+            </button>
           </div>
         </div>
       </div>
