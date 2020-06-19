@@ -22,13 +22,14 @@ class DetailedInfoField extends React.Component {
     return (
       <div className="Detailed-Field-Wrapper">
           <div className="Detailed-Field-Content">
+              <p className="CloseBtn" onClick={() => this.props.weatherInfoFieldOnClickClose()}>X</p>
               <p className="DFC-Header">Detaillierte Wetter Analyse:</p>
               <p className="DFCH1">Wetter:</p>
               <p className="DFCH2">Temp:</p>
               <p className="DFCH3">Wind & Feuchtigkeit:</p>
               <div className="DFCC1">
                   <li className="DFCC-text">{this.props.weatherInfoObj.weather[0].description}</li>
-                  <img src={`${this.weatherIcon()}`} width="100px"></img>
+                  <img className="DFCC-image" src={`${this.weatherIcon()}`} width="100px"></img>
               </div>
               <div className="DFCC2">
                   <li className="DFCC-text">Temperatur: {this.renderTemperature(this.props.weatherInfoObj.main.temp)}</li>

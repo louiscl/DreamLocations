@@ -37,7 +37,6 @@ class WeatherInfoField extends React.Component {
       const date = this.props.weatherInfoObj.dt_txt.split(" ");
       const dateOnly = date[0].split("-");
       const dateReal = dateOnly[2] + "." + dateOnly[1];
-      console.log(dateReal);
       return dateReal;
     }
   };
@@ -56,15 +55,20 @@ class WeatherInfoField extends React.Component {
   };
 
   renderTemperature = () => {
-    if(this.apiContentLoaded()){
-    return `${Math.round(this.convertKelvinToCelsius(this.props.weatherInfoObj.main.temp))}°`
+    if (this.apiContentLoaded()) {
+      return `${Math.round(
+        this.convertKelvinToCelsius(this.props.weatherInfoObj.main.temp)
+      )}°`;
     }
   };
 
   render() {
     return (
       <div className={`W-I-B-${this.props.idx}`}>
-        <div className="WIB-Content" onClick={() => this.props.click(this.props.weatherInfoObj)}>
+        <div
+          className="WIB-Content"
+          onClick={() => this.props.click(this.props.weatherInfoObj)}
+        >
           <div className={`WIB-Content-City-${this.props.city()}`}>
             <p className="WIB-Day">{this.renderDay()}</p>
             <p className="WIB-Date">{this.convertAndRenderTextDate()}</p>

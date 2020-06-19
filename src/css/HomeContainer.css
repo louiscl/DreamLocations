@@ -15,6 +15,7 @@
 
 @media (max-width: 635px) {
   .Home-Container {
+    background-repeat: repeat;
     grid-template-areas:
       "header header        header  header header   header       header"
       ". .        headline       headline headline        .       ."
@@ -110,6 +111,13 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 635px) {
+  .Wrapper-Div-Meerbusch {
+    width: 370px;
+  }
+}
+
 
 .Wrapper-Div-Ibiza {
   grid-area: colTwo;
@@ -224,6 +232,13 @@ img {
   animation: emerge-desktop 2s;
 }
 
+@media (max-width: 635px) {
+  .Detailed-Field-Wrapper {
+    width: 380px;
+    height: none;
+  }
+}
+
 @keyframes emerge-desktop {
   0% {
     width: 0px;
@@ -246,12 +261,14 @@ img {
   color: white;
   display: grid;
   grid-template-areas: 
+  ". . CloseBtn"
   "DFCHeader DFCHeader DFCDate"
   "DFCH1 DFCH2 DFCH3"
   "DFCC1 DFCC2 DFCC3"
   ;
   animation: emerge-desktop 2s;
-
+  grid-template-rows: 15px  ;
+  grid-template-columns: 1fr 1fr 1fr  ;
 }
 
 @keyframes appear {
@@ -268,9 +285,22 @@ img {
   }
 }
 
+.CloseBtn{
+  grid-area: CloseBtn;
+  justify-self: right ;
+  margin-right: 15px;
+  animation: appear 3s;
+
+}
+
+.CloseBtn:hover{
+  cursor: pointer;
+}
+
 .DFC-Header{
   grid-area: DFCHeader;
   justify-self: left;
+  align-self: baseline;
   margin-left: 5px;
   font-size: 1.2rem;
   font-weight: 500;
@@ -283,6 +313,11 @@ img {
   justify-self: left;
   animation: appear 5s;
 }
+
+.DFCC-image{
+  animation: appear 5s;
+}
+
 
 .DFCH1{
   grid-area: DFCH1;

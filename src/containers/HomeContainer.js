@@ -34,15 +34,21 @@ class HomeContainer extends React.Component {
     // }
   }
 
+  weatherInfoFieldOnClickClose = () => {
+    this.setState({infoField: false, infoFieldObj: {}})
+  }
+
+
+
   render() {
     return (
       <div className="Home-Container">
         <div className="Home-Header"></div>
-        <p className="Home-Headline">Traum Häuser</p>
+        <p className="Home-Headline">Best Locations</p>
         <LocationField city="Meerbusch" weatherInfo={this.state.meerbusch} click={this.weatherInfoFieldOnClick}/>
         <LocationField city="Ibiza" weatherInfo={this.state.ibiza} click={this.weatherInfoFieldOnClick}/>
         <LocationField city="Aurach" weatherInfo={this.state.aurach} click={this.weatherInfoFieldOnClick}/>
-        {this.state.infoField ? <DetailedInfoField weatherInfoObj={this.state.infoFieldObj}/> : null}
+        {this.state.infoField ? <DetailedInfoField weatherInfoObj={this.state.infoFieldObj} weatherInfoFieldOnClickClose={this.weatherInfoFieldOnClickClose}/> : null}
         <div className="Placeholder"></div>
         <div className="Home-Footer"></div>
       </div>
